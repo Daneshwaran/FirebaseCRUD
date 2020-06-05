@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
         private EditText text;
@@ -29,14 +31,8 @@ protected void onCreate(Bundle savedInstanceState) {
         button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                        rootNode = FirebaseDatabase.getInstance();
-                        reference = rootNode.getReference("data");
-                        reference.setValue("First data");
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "click",
-                                Toast.LENGTH_SHORT);
-
-                        toast.show();
+                        String txt_name = text.getText().toString();
+                        FirebaseDatabase.getInstance().getReference().child("knowledge").push().child("Name").setValue(txt_name);
                 }
         });
 
