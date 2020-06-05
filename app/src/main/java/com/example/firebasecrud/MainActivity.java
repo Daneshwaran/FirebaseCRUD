@@ -29,8 +29,11 @@ protected void onCreate(Bundle savedInstanceState) {
         button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                        rootNode = FirebaseDatabase.getInstance();
+                        reference = rootNode.getReference("data");
+                        reference.setValue("First data");
                         Toast toast = Toast.makeText(getApplicationContext(),
-                                "This is a message displayed in a Toast",
+                                "click",
                                 Toast.LENGTH_SHORT);
 
                         toast.show();
