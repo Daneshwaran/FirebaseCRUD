@@ -32,7 +32,7 @@ protected void onCreate(Bundle savedInstanceState) {
                 @Override
                 public void onClick(View view) {
                         String txt_name = text.getText().toString();
-                        FirebaseDatabase.getInstance().getReference().child("knowledge").push().child("Name").setValue(txt_name);
+                        FirebaseDatabase.getInstance().getReference().child("knowledge").child("Name").setValue(txt_name);
                 }
         });
 
