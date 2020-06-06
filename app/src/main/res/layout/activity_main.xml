@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -46,37 +45,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
+
+
+    <RadioButton
+        android:id="@+id/female"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="male"
+        tools:ignore="MissingConstraints" />
+    <RadioButton
+        android:id="@+id/male"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="male"
+        tools:ignore="MissingConstraints" />
+
+
     <Button
-        android:textColor="@color/white"
-        android:background="@color/colorPrimary"
         android:id="@+id/save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimary"
         android:text="save"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/author" />
 
     <Button
-        android:textColor="@color/white"
-        android:background="@color/colorPrimary"
         android:id="@+id/read"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimary"
         android:text="Read"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save" />
 
     <TextView
-        android:textSize="16sp"
-        android:textColor="@color/colorPrimary"
         android:id="@+id/text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -84,6 +97,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/read" />

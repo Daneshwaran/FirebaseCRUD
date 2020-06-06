@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         private EditText title,description,author;
         private TextView text;
         private Button save,read;
+        RadioButton male,female;
+        int i=0;
         private DatabaseReference Post;
 
 
@@ -101,8 +104,10 @@ public class MainActivity extends AppCompatActivity {
                 map.put("description",description.getText().toString());
                 map.put("author",author.getText().toString());
 
+
                 Post.push()
                         .setValue(map)
+
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -119,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onSuccess(Void aVoid) {
                                 Log.i("jfbvkj", "onSuccess: ");
                         }
+
                 });
         }
 
@@ -129,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
                 save = findViewById(R.id.save);
                 read = findViewById(R.id.read);
                 text = findViewById(R.id.text);
+                male=findViewById(R.id.male);;
+                female=findViewById(R.id.female);
 
                 Post = FirebaseDatabase.getInstance().getReference().child("Post");
         }
