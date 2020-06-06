@@ -1,14 +1,14 @@
 package com.example.firebasecrud;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
                         .addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                        String post = "title : "+dataSnapshot.child("title").getValue(String.class)+"\n"
-                                                +"description : "+dataSnapshot.child("description").getValue(String.class)+"\n"
-                                                +"author : "+dataSnapshot.child("author").getValue(String.class);
+                                        String post = "Title : "+dataSnapshot.child("title").getValue(String.class)+"\n"
+                                                +"Description : "+dataSnapshot.child("description").getValue(String.class)+"\n"
+                                                +"Author : "+dataSnapshot.child("author").getValue(String.class);
 
                                         text.setText(post);
                                 }
@@ -80,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                                        String post = "title : "+dataSnapshot.child("title").getValue(String.class)+"\n"
-                                                +"description : "+dataSnapshot.child("description").getValue(String.class)+"\n"
-                                                +"author : "+dataSnapshot.child("author").getValue(String.class);
+                                        String post = "Title : "+dataSnapshot.child("title").getValue(String.class)+"\n"
+                                                +"Description : "+dataSnapshot.child("description").getValue(String.class)+"\n"
+                                                +"Author : "+dataSnapshot.child("author").getValue(String.class);
 
                                         text.setText(post);
 
