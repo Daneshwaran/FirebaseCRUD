@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         private TextView text;
         private Button save,read;
         RadioButton male,female;
-        int i=0;
+       // Member member;
         private DatabaseReference Post;
 
 
@@ -63,11 +63,15 @@ public class MainActivity extends AppCompatActivity {
                         .addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                        String post = "Title : "+dataSnapshot.child("title").getValue(String.class)+"\n"
-                                                +"Description : "+dataSnapshot.child("description").getValue(String.class)+"\n"
-                                                +"Author : "+dataSnapshot.child("author").getValue(String.class);
 
-                                        text.setText(post);
+
+
+                                                String post = "Title : " + dataSnapshot.child("title").getValue(String.class) + "\n"
+                                                        + "Description : " + dataSnapshot.child("description").getValue(String.class) + "\n"
+                                                        + "Author : " + dataSnapshot.child("author").getValue(String.class);
+
+                                                text.setText(post);
+
                                 }
 
                                 @Override
@@ -103,6 +107,16 @@ public class MainActivity extends AppCompatActivity {
                 map.put("title",title.getText().toString());
                 map.put("description",description.getText().toString());
                 map.put("author",author.getText().toString());
+                String m1 =male.getText().toString();
+               String m2=female.getText().toString();
+              if (male.isChecked()){
+                     // member.setGender(m1);
+                     map.put("Gender",m1);
+                }else{
+                    //   member.setGender(m2);
+                      map.put("Gender",m2);
+                }
+
 
 
                 Post.push()
@@ -136,9 +150,9 @@ public class MainActivity extends AppCompatActivity {
                 read = findViewById(R.id.read);
                 text = findViewById(R.id.text);
                 male=findViewById(R.id.male);;
-                female=findViewById(R.id.female);
-
+               female=findViewById(R.id.female);
                 Post = FirebaseDatabase.getInstance().getReference().child("Post");
+
         }
 
 
